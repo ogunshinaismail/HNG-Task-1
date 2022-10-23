@@ -66,6 +66,7 @@
 #icons {
   display: flex;
   gap: 1.4rem;
+  margin-top: 1rem;
 }
 
 #footer {
@@ -82,4 +83,26 @@
   color: #667085;
   font-weight: 400;
   font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  #container{
+    width: 95%;
+  }
+
+  #links {
+    width: 95%;
+  }
+
+  #links a {
+    font-size: 14px;
+  }
+
+  #icons {
+    display: none;
+  }
+
+  #footer {
+    display: none;
+  }
 }

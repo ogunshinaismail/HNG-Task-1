@@ -1,5 +1,5 @@
 // IMAGES
-export { default as ProfileImg } from './images/ellen.JPG';
+export { default as ProfileImg } from './images/dp.jpg';
 export { default as ZuriLogo } from './images/zuri.svg';
 export { default as I4GLogo } from './images/I4G.svg';
 
