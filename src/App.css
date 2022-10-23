@@ -28,6 +28,12 @@
   border-radius: 50%;
 }
 
+#profile h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+
 #twitter {
   margin: 1rem 0 0 0;
 }
@@ -46,12 +52,34 @@
 }
 
 #links a {
-  background: #f6f6f6;
+  background: #EAECF0;
   text-decoration: none;
   color: #000;
+  font-size: 18px;
   padding: 1rem ;
   width: 100%;
   font-weight: 500;
   border-radius: 8px;
   text-align: center;
+}
+
+#icons {
+  display: flex;
+  gap: 1.4rem;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0 0 0;
+  border-top: 1px solid #EAECF0;
+  padding: 1rem 0;
+}
+
+#footer p {
+  color: #667085;
+  font-weight: 400;
+  font-size: 16px;
 }
