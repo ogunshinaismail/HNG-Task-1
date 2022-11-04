@@ -1,5 +1,6 @@
 import React from 'react'
 import { Slack, Github } from '../assets'
+import { Link } from 'react-router-dom'
 
 const Links = () => {
   return (
@@ -11,6 +12,7 @@ const Links = () => {
             <a href="https://books.zuri.team/python-for-beginners?ref_id=Ismail" target="_blank" rel="noreferrer" id='book__python'>Python Books</a>
             <a href=" https://background.zuri.team" target="_blank" rel="noreferrer" id='pitch'>Background Check for Coders</a>
             <a href="https://books.zuri.team/design-rules" target="_blank" rel="noreferrer" id='book__design'>Design Books</a>
+            <Link to='/contact' id='contact'>Contact</Link>
 
             <div id="icons">
               <img src={Slack} alt="slack-icon" />
