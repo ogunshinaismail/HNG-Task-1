@@ -234,4 +234,46 @@ form button {
     gap: 1rem;
     padding: 2rem 0 0 0;
   }
+
+
+  /* CONTACT PAGE */
+
+  #contact-container {
+    width: 91%;
+  }
+
+  #contact-header p {
+    margin-top: .6rem;
+  }
+
+  #form-section {
+    width: 100%;
+  }
+
+  #contact-header p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  #form-first-row {
+    grid-template-columns: 100%;
+  }
+
+  #checkbox {
+    align-items: flex-start;
+  }
+
+  #checkbox input {
+    margin-top: 4px;
+  }
+
+  #checkbox p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  #contact-footer {
+    margin: 0 0 1rem 0; 
+  }
+
 }
