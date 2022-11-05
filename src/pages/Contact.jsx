@@ -43,40 +43,51 @@ const Contact = () => {
             <form>
                 <div id="form-first-row">
                     <div id="firstname">
-                        <label>First name</label>
-                        <input type="text" id='first_name' placeholder='Enter your first name' />
+                        <label htmlFor="fname">First name</label>
+                        <input
+                        type="text"
+                        name="fname"
+                        id="first_name"
+                        placeholder="Enter your first name"
+                        required
+                        />
+                        <p className="error" id="error__fname">Please enter your first name</p>
                     </div>
+
                     <div id="lastname">
-                        <label>Last name</label>
-                        <input type="text" id='last_name' placeholder='Enter your last name' />
+                        <label htmlFor="lname">Last name</label>
+                        <input
+                            type="text"
+                            name="lname"
+                            id="last_name"
+                            placeholder="Enter your last name"
+                            required
+                        />
+                        <p className="error" id="error__lname">Please enter your last name</p>
                     </div>
                 </div>
 
                 <div id="email">
-                    <label>Email</label>
-                    <input 
-                        type="email" 
-                        id='email' 
-                        placeholder='yourname@email.com'
-                        name="email"
-                        value={email}
-                        onChange={handleChange}
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="yourname@email.com"
+                        required
                     />
-                    {emlError && <p style={{color: 'red', marginTop: '5px'}}>{emlError}</p>}
+                    <p className="error" id="error__email">Please enter your email</p>
                 </div>
 
                 <div id="message">
-                    <label>Message</label>
-                    <textarea 
-                        id="message" 
-                        placeholder="Send me a message and I'll reply you as soon as possible..."
-                        name='message'
-                        value={message}
-                        onChange={empty}
-                        required
-                        className={error ? "texterr" : ""}
-                    ></textarea>
-                    {error && <p style={{color: 'red', marginTop: '5px'}}>{error}</p>}
+                    <div className="textarea">
+                        <label htmlFor="message">Message</label>
+                        <textarea
+                            id="message"
+                            placeholder="Send me a message and i'll reply you as soon as possible... "
+                            required
+                        />
+                        <p className="error" id="error__message">Please enter your message</p>
+                    </div>
                 </div>
 
                 <div id="checkbox">
