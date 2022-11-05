@@ -1,7 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../components/Footer'
 
 const Contact = () => {
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [error, setError] = useState(null);
+    const [emlError, setemlError] = useState(null);
+    const [checked, setChecked] = useState(false);
+
+    function isValidEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+    
+    const handleChange = event => {
+        if (!isValidEmail(event.target.value) || event.target.value === "") {
+            setemlError('Email is invalid');
+        } else {
+            setemlError(null);
+        }
+
+        setEmail(event.target.value)
+    };
+
+    const empty = event => {
+        if(message === "") {
+            setError('Please enter a message')
+        } else {
+            setError(null);
+        }
+
+        setMessage(event.target.value)
+    }
+
   return (
     <div id='contact-container'>
         <div id="form-section">
@@ -24,20 +54,43 @@ const Contact = () => {
 
                 <div id="email">
                     <label>Email</label>
-                    <input type="email" id='email' placeholder='yourname@email.com' />
+                    <input 
+                        type="email" 
+                        id='email' 
+                        placeholder='yourname@email.com'
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                    />
+                    {emlError && <p style={{color: 'red', marginTop: '5px'}}>{emlError}</p>}
                 </div>
 
                 <div id="message">
                     <label>Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" placeholder="Send me a message and I'll reply you as soon as possible..."></textarea>
+                    <textarea 
+                        id="message" 
+                        placeholder="Send me a message and I'll reply you as soon as possible..."
+                        name='message'
+                        value={message}
+                        onChange={empty}
+                        required
+                        className={error ? "texterr" : ""}
+                    ></textarea>
+                    {error && <p style={{color: 'red', marginTop: '5px'}}>{error}</p>}
                 </div>
 
                 <div id="checkbox">
-                    <input type="checkbox" name="" id="" />
+                    <input 
+                        type="checkbox" 
+                        name="" 
+                        id=""
+                        checked={checked}
+                        onChange={e => setChecked(e.target.checked)}
+                    />
                     <p>You agree to providing your data to Ismail who may contact you.</p>
                 </div>
 
-                <button>Send message</button>
+                <button disabled={!checked}>Send message</button>
             </form>
         </div>
 
